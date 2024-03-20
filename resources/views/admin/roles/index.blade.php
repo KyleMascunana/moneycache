@@ -3,7 +3,9 @@
     <div class="py-12 w-full">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-lg lg:rounded-lg p-2">
-                <span class="text-xl px-4 py-2">Role Panel</span>
+                <label class="uppercase text-2xl font-extrabold pl-5">Roles List</label>
+                <p class="mt-1 text-sm leading-6 text-gray-600 pl-5">You can view or add new role to the system here.</p>
+                <hr>
                 <div class="flex justify-end p-3">
                     <a href="{{ route('admin.roles.create') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 text-white rounded-md">Add Role</a>
                 </div>
