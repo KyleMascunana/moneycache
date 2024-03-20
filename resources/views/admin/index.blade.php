@@ -238,12 +238,12 @@
                 "data": [{{ $package1Count }}, {{ $package1ACount }}, {{ $package1BCount }},
                 {{ $package2Count }}, {{ $package2ACount }}, {{ $package2BCount }}],
                 "fill": false,
-                "backgroundColor": ["rgba(255, 131, 0, 0.8)", "rgba(255, 131, 0, 0.8)",
-                "rgba(255, 131, 0, 0.8)", "rgba(133, 146, 158, 0.8)",
-                "rgba(133, 146, 158, 0.8)", "rgba(133, 146, 158, 0.8)"
+                "backgroundColor": ["rgba(231, 76, 60, 0.8)", "rgba(255, 131, 0, 0.8)",
+                "rgba(26, 188, 156, 0.8)", "rgba(46, 204, 113, 0.8)",
+                "rgba(46, 134, 193, 0.8)", "rgba(142, 68, 173, 0.8)"
                 ],
-                "borderColor": ["rgb(255, 131, 0)", "rgb(255, 131, 0)", "rgb(255, 131, 0)",
-                 "rgb(133, 146, 158)", "rgb(133, 146, 158)", "rgb(133, 146, 158)"
+                "borderColor": ["rgb(231, 76, 60, 0)", "rgb(255, 131, 0)", "rgb(26, 188, 156)",
+                 "rgb(46, 204, 113)", "rgb(46, 134, 193)", "rgb(142, 68, 173)"
                 ],
                 "borderWidth": 1
             }]
