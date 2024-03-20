@@ -23,6 +23,8 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 
     Route::resource('/customers', CustomerController::class);
 
+
+
     Route::resource('/details', DetailController::class);
 
     Route::resource('/report', ReportController::class);

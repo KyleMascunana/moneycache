@@ -104,4 +104,22 @@ class UserController extends Controller
 
         return to_route('admin.users.index')->with('message', 'User has been Created Successfully!');
     }
+
+    public function edit(User $user)
+    {
+        return view('admin.users.edit', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, User $user)
+    {
+        $request->validate([
+
+        ]);
+
+        $user->update($request->all());
+        return to_route('admin.users.index')->with('message', 'User has been Updated Successfully!');
+    }
 }

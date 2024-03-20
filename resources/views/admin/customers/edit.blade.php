@@ -36,9 +36,18 @@
                                                 </div>
 
                                                 <div class="sm:col-span-3">
-                                                    <label for="package" class="block text-sm font-medium leading-6 text-gray-900">Package</label>
+                                                    <label for="package" class="block text-sm font-medium leading-6 text-gray-900">Packages<span class="text-red-600">*</span></label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="package" id="package" value="{{ $customer->package }}" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <select name="package" value="{{ $customer->package }}" required class="block mt-1 w-full border-gray-300 focus:border-indigo-300
+                                                            focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                                                                <option disabled>-- Select Below --</option>
+                                                                <option class="text-sm text-gray-700" value="p1">Package 1</option>
+                                                                <option class="text-sm text-gray-700" value="p1A">Package 1.A</option>
+                                                                <option class="text-sm text-gray-700" value="p1B">Package 1.B</option>
+                                                                <option class="text-sm text-gray-700" value="p2">Package 2</option>
+                                                                <option class="text-sm text-gray-700" value="p2A">Package 2.A</option>
+                                                                <option class="text-sm text-gray-700" value="p2B">Package 2.B</option>
+                                                            </select>
                                                     </div>
                                                 </div>
 
@@ -66,7 +75,7 @@
                                                 <div class="sm:col-span-3">
                                                     <label for="user_status" class="block text-sm font-medium leading-6 text-gray-900">User Status</label>
                                                     <div class="mt-2">
-                                                            <select name="user_status"  value="{{ $customer->user_status }}" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
+                                                            <select name="user_status" value="{{ $customer->user_status }}" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
                                                             focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                                                 <option disabled>-- Select Below --</option>
                                                                 <option class="text-sm text-gray-700" value="active">Active</option>

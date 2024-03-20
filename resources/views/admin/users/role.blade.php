@@ -3,7 +3,7 @@
     <div class="py-12 w-full">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2">
-                <span class="text-xl px-4 py-2">Role Panel</span>
+                <span class="text-xl px-4 py-2">User Panel</span>
                 <div class="flex p-3">
                     <a href="{{ route('admin.users.index') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 text-white rounded-md p-4">Back to User</a>
                 </div><br><br>
