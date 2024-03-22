@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\TemplateOneController;
 
@@ -49,6 +50,10 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 
 });
 
+
+Route::middleware(['auth', 'role:user'])->name('user.')->prefix('user')->group(function(){
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
