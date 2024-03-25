@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
@@ -26,6 +27,8 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/customers', CustomerController::class);
 
     Route::resource('/details', DetailController::class);
+    Route::get('/details/{detail}', [DetailController::class, 'edit'])->name('details.edit');
+    Route::put('/details/{detail}', [DetailController::class, 'update'])->name('details.update');
 
     Route::resource('/report', ReportController::class);
 
@@ -47,6 +50,10 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::delete('/users/{user}/permissions/{permission}', [UserController::class, 'revokePermission'])->name('users.permissions.revoke');
 
     Route::resource('/templateone', TemplateOneController::class);
+
+    Route::resource('/package', PackageController::class);
+    Route::get('/admin/package/{package}', [PackageController::class, 'edit'])->name('package.edit');
+    Route::put('/admin/package/{package}', [PackageController::class, 'update'])->name('package.update');
 
 });
 

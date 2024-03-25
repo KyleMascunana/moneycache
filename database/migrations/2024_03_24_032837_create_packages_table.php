@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('details', function (Blueprint $table) {
+        Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
-            $table->date('latest_payment')->nullable();
-            $table->string('payment_status')->nullable();
-
-            $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('package_number');
+            $table->string('file');
+            $table->string('package_name');
+            $table->string('package_detail');
+            $table->string('package_price');
+            $table->string('package_status');
+            $table->string('package_trial');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('details');
+        Schema::dropIfExists('packages');
     }
 };

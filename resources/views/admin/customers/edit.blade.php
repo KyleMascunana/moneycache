@@ -3,9 +3,6 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-gray-300 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex justify-end p-3">
-                        <a href="{{ route('admin.customers.index') }}" class="text-blue-500 hover:text-blue-900"><i class="fa-solid fa-door-closed"></i></a>
-                    </div>
                     <div class="p-6 text-gray-900">
                         <label class=" text-2xl">Update Customer</label>
                         <p class="mt-1 text-md leading-6 text-gray-600">You can add new customers by filling up the form below.</p>
@@ -17,37 +14,12 @@
                                     @method('PUT')
 
                                     <div class="border-b border-gray-900/10 pb-12">
-                                        <h2 class="text-base font-semibold leading-7 text-gray-900">Customer Update</h2>
-                                            <p class="mt-1 text-sm leading-6 text-gray-600">Read the data inputted before saving.</p>
-
                                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                                                <div class="sm:col-span-3">
-                                                    <label for="start_date" class="block text-sm font-medium leading-6 text-gray-900">Start Date</label>
-                                                    <div class="mt-2">
-                                                        <input type="date" name="start_date" value="{{ $customer->start_date }}" id="set_date" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                    </div>
-                                                </div>
 
                                                 <div class="sm:col-span-3">
                                                     <label for="client_id" class="block text-sm font-medium leading-6 text-gray-900">Client ID</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="client_id" id="client_id" value="{{ $customer->client_id }}" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm:col-span-3">
-                                                    <label for="package" class="block text-sm font-medium leading-6 text-gray-900">Packages<span class="text-red-600">*</span></label>
-                                                    <div class="mt-2">
-                                                            <select name="package" value="{{ $customer->package }}" required class="block mt-1 w-full border-gray-300 focus:border-indigo-300
-                                                            focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                                                <option disabled>-- Select Below --</option>
-                                                                <option class="text-sm text-gray-700" value="p1">Package 1</option>
-                                                                <option class="text-sm text-gray-700" value="p1A">Package 1.A</option>
-                                                                <option class="text-sm text-gray-700" value="p1B">Package 1.B</option>
-                                                                <option class="text-sm text-gray-700" value="p2">Package 2</option>
-                                                                <option class="text-sm text-gray-700" value="p2A">Package 2.A</option>
-                                                                <option class="text-sm text-gray-700" value="p2B">Package 2.B</option>
-                                                            </select>
                                                     </div>
                                                 </div>
 
@@ -81,19 +53,6 @@
                                                                 <option class="text-sm text-gray-700" value="active">Active</option>
                                                                 <option class="text-sm text-gray-700" value="inactive">Inactive</option>
                                                                 <option class="text-sm text-gray-700" value="suspended">Suspended</option>
-                                                            </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm:col-span-3">
-                                                    <label for="payment_status" class="block text-sm font-medium leading-6 text-gray-900">User Status</label>
-                                                    <div class="mt-2">
-                                                            <select name="payment_status"  value="{{ $customer->payment_status }}" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
-                                                            focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                                                <option disabled>-- Select Below --</option>
-                                                                <option class="text-sm text-gray-700" value="paid">Paid</option>
-                                                                <option class="text-sm text-gray-700" value="unpaid">Unpaid</option>
-                                                                <option class="text-sm text-gray-700" value="cancelled">Cancelled</option>
                                                             </select>
                                                     </div>
                                                 </div>

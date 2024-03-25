@@ -12,7 +12,8 @@ class Report extends Model
     use HasFactory;
 
     protected $fillable = [
-        'customer_id'
+        'customer_id',
+        'detail_id'
     ];
 
     public function customer()

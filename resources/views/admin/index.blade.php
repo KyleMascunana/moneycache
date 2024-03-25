@@ -232,7 +232,7 @@
                     new Chart(document.getElementById("horizontalBar"), {
             "type": "horizontalBar",
             "data": {
-            "labels": ["P1", "P1.A", "P1.B", "P2", "P2.A", "P2.B"],
+            "labels": ["P1", "P2", "P3", "P4", "P5", "P6"],
             "datasets": [{
                 "label": "Package Rating",
                 "data": [{{ $package1Count }}, {{ $package1ACount }}, {{ $package1BCount }},

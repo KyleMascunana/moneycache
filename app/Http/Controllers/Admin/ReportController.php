@@ -14,6 +14,7 @@ class ReportController extends Controller
     public function index()
     {
         $reports = Report::with('customer')->get();
+        $reports = Report::with('detail')->get();
 
         // Pass the reports data to the view
         return view('admin.report.index', ['reports' => $reports]);
@@ -34,13 +35,15 @@ class ReportController extends Controller
     {
         // Validate the request data
         $request->validate([
-            'customer_id' => 'required', // Ensure detail_id is required
+            'customer_id' => 'required',
+            'detail_id' => 'required', // Ensure detail_id is required
             // Add validation rules for other fields if needed
         ]);
 
         // Create a new report
         $report = new Report();
         $report->customer_id = $request->input('customer_id'); // Assign detail_id from request
+        $report->detail_id = $request->input('detail_id');
         // Assign other fields as needed
         $report->save();
 

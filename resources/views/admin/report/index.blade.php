@@ -19,7 +19,6 @@
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Contact No.</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Business Name</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">User Status</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Payment Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,22 +43,6 @@
                                             {{ $report->customer->user_status }}
                                         </span>
                                     @endif
-                                    </td>
-                                        <td class="p-3 text-gray-700 text-sm text-center">
-                                            @if ($report->customer->payment_status == 'paid')
-                                            <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
-                                                {{ $report->customer->payment_status }}
-                                            </span>
-                                        @elseif($report->customer->payment_status == 'unpaid')
-                                            <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
-                                                {{ $report->customer->payment_status }}
-                                            </span>
-                                        @elseif($report->customer->payment_status == 'cancelled')
-                                            <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
-                                                {{ $report->customer->payment_status }}
-                                            </span>
-                                        @endif
-                                    </td>
                                 </tr>
                                 @endforeach
                         </tbody>

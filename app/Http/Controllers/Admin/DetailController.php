@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Detail;
+use App\Models\Package;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -23,8 +24,9 @@ class DetailController extends Controller
      */
     public function create()
     {
+        $packages = Package::all();
         $customers = Customer::all();
-        return view('admin.details.create', compact('customers'));
+        return view('admin.details.create', compact('customers', 'packages'));
     }
 
     /**
@@ -33,17 +35,25 @@ class DetailController extends Controller
     public function store(Request $request)
     {
         $customer_id = $request->customer_id;
-        $latest_payment = $request->latest_payment;
+        $package_id = $request->package_id;
+        $month = $request->month;
+        $year = $request->year;
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
         $payment_status = $request->payment_status;
 
         $data = new Detail;
 
         $data->customer_id = $customer_id;
-        $data->latest_payment = $latest_payment;
+        $data->package_id = $package_id;
+        $data->month = $month;
+        $data->year = $year;
+        $data->start_date = $start_date;
+        $data->end_date = $end_date;
         $data->payment_status = $payment_status;
 
         $data->save();
-        return to_route('admin.customers.index')->with('message', 'Customer Payment has been Created Successfully!');
+        return to_route('admin.details.index')->with('message', 'Customer Payment has been Created Successfully!');
     }
 
     /**
@@ -57,10 +67,12 @@ class DetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Detail $detail)
+    public function edit($id)
     {
-        $customers = Customer::all();
-        return view('admin.details.edit', compact('detail', 'customers'));
+        $detail = Detail::findOrFail($id);
+        $packages = Package::all();
+        $customers = Customer::all(); // Assuming you have a model named Detail
+        return view('admin.details.edit', compact('detail', 'packages', 'customers'));
     }
 
     /**
@@ -73,7 +85,7 @@ class DetailController extends Controller
         ]);
 
         $detail->update($request->all());
-        return to_route('admin.customers.index')->with('message', 'Customer has been Updated Successfully!');
+        return to_route('admin.details.index')->with('message', 'Customer has been Updated Successfully!');
     }
 
     /**

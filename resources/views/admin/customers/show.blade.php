@@ -3,24 +3,26 @@
     <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-gray-300 overflow-hidden shadow-sm sm:rounded-lg p-3">
-                <div class="flex justify-end p-3">
-                    <a href="{{ route('admin.customers.index') }}" class="text-blue-500 hover:text-blue-900"><i class="fa-solid fa-door-closed"></i></a>
-                </div>
-
-                <div class="p-3">
-                    <label class="uppercase text-2xl font-extrabold pl-5">Customer Details</label>
-                </div>
-
-                <div class="flex justify-end p-3">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="bg-yellow-500 text-white hover:bg-yellow-900 pl-5 rounded px-4 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Billing History
-                    </button>
-                </div>
+                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-3">
+                        <div class="p-3">
+                            <label class="uppercase text-2xl font-extrabold pl-5">Customer Details</label>
+                            <p class="mt-1 text-sm leading-6 text-gray-600 pl-5">You can view the customer information & billing here.</p>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <div class="flex justify-end p-2">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="bg-blue-500 text-white hover:bg-blue-700 pl-5 rounded px-4 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Billing History
+                            </button>
+                        </div>
+                    </div>
+                </div><hr>
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog  modal-lg modal-dialog-scrollable">
+                        <div class="modal-dialog modal-xl modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
                             <h1 class="modal-title fs-5 font-bold text-5xl uppercase" id="exampleModalLabel">Billing History</h1>
@@ -34,12 +36,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($customer->details as $detail)
                                         <tr>
-                                            <td class="align-middle text-center text-lg uppercase">{{ $detail->latest_payment }}</td>
-                                            <td class="align-middle text-center text-lg uppercase ">{{ $detail->payment_status }}</td>
+                                            <td class="align-middle text-center text-lg uppercase">adad</td>
+                                            <td class="align-middle text-center text-lg uppercase ">adasdasd</td>
                                         </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -60,14 +60,6 @@
 
                         <div class="mt-2 text-lg uppercase">
                             <input type="text" value="{{ $customer->email }}" disabled autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-3">
-                        <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Start Date</label>
-
-                        <div class="mt-2 text-lg uppercase">
-                            <input type="text" value="{{ $customer->start_date }}" disabled autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                     </div>
 
@@ -94,22 +86,6 @@
                             <input type="text" value="{{ $customer->user_status }}" disabled autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                     </div>
-                    <div class="sm:col-span-3">
-                        <label for="user_status" class="block text-sm font-medium leading-6 text-gray-900">Payment Status</label>
-
-                        <div class="mt-2 text-lg uppercase">
-                            <input type="text" value="{{ $customer->payment_status }}" disabled autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-3">
-                        <label for="payment_status" class="block text-sm font-medium leading-6 text-gray-900">Current Package Plan</label>
-
-                        <div class="mt-2 text-lg uppercase">
-                            <input type="text" value="{{ $customer->package }}" disabled autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                        </div>
-
 
                         <div class="sm:col-span-3">
                             <label for="business_location" class="block text-sm font-medium leading-6 text-gray-900">Business Location</label>
