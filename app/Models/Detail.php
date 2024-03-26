@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Package;
+use App\Events\CustomerCreated;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -29,4 +30,8 @@ class Detail extends Model
     {
         return $this->belongsTo(Package::class);
     }
+
+    protected $dispatchesEvents = [
+        'created' => CustomerCreated::class,
+    ];
 }

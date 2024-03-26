@@ -29,7 +29,4 @@ class Customer extends Model
     }
 
 
-    protected $dispatchesEvents = [
-        'created' => CustomerCreated::class,
-    ];
 }

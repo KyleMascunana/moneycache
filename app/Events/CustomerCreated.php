@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Detail;
 use App\Models\Report;
 use App\Models\Customer;
 use Illuminate\Broadcasting\Channel;
@@ -16,11 +17,11 @@ class CustomerCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $customer;
+    public $detail;
 
-    public function __construct(Customer $customer)
+    public function __construct(Detail $detail)
     {
-        $this->customer = $customer;
+        $this->detail = $detail;
     }
 
     /**

@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\CustomerCreated' => [
             'App\Listeners\CreateReportForCustomer',
         ],
+        'App\Events\DetailCreated' => [
+            'App\Listeners\CreateReportForDetail',
+        ],
     ];
 
     /**

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\DetailReportController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\User\DashboardController;
@@ -31,6 +32,7 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::put('/details/{detail}', [DetailController::class, 'update'])->name('details.update');
 
     Route::resource('/report', ReportController::class);
+    Route::resource('/detailreport', DetailReportController::class);
 
     Route::resource('/roles', RoleController::class);
     Route::post('/roles/{role}/permissions', [RoleController::class, 'givePermission'])->name('roles.permissions');

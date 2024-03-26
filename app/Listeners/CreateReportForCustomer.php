@@ -25,11 +25,11 @@ class CreateReportForCustomer
     public function handle(CustomerCreated $event): void
     {
         // Retrieve the newly created customer instance
-        $customer = $event->customer;
+        $detail = $event->detail;
 
         // Create a new report for the customer
         $report = new Report();
-        $report->customer_id = $customer->id;
+        $report->detail_id = $detail->id;
         // Populate other report attributes as needed
         $report->save();
     }
