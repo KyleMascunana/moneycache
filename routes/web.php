@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ReportController;
-use App\Http\Controllers\DetailReportController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\User\DashboardController;
@@ -32,7 +31,6 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::put('/details/{detail}', [DetailController::class, 'update'])->name('details.update');
 
     Route::resource('/report', ReportController::class);
-    Route::resource('/detailreport', DetailReportController::class);
 
     Route::resource('/roles', RoleController::class);
     Route::post('/roles/{role}/permissions', [RoleController::class, 'givePermission'])->name('roles.permissions');
@@ -54,8 +52,13 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/templateone', TemplateOneController::class);
 
     Route::resource('/package', PackageController::class);
-    Route::get('/admin/package/{package}', [PackageController::class, 'edit'])->name('package.edit');
-    Route::put('/admin/package/{package}', [PackageController::class, 'update'])->name('package.update');
+    Route::get('/package/{package}', [PackageController::class, 'edit'])->name('package.edit');
+    Route::put('/package/{package}', [PackageController::class, 'update'])->name('package.update');
+    Route::get('/trashed', [PackageController::class, 'trashed'])->name('package.trashed');
+    Route::get('/restore/{id}', [PackageController::class, 'restore'])->name('package.restore');
+    Route::get('/softDelete/{id}', [PackageController::class, 'softDelete'])->name('package.softDelete');
+    Route::get('forceDelete/{id}', [PackageController::class, 'forceDelete'])->name('package.forceDelete');
+    Route::get('/restore/{id}', [PackageController::class, 'restore'])->name('package.restore');
 
 });
 

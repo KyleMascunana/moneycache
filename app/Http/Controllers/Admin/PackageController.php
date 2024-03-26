@@ -85,10 +85,30 @@ class PackageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Package $package)
+    public function softDelete($id)
     {
-        $package->delete();
+        Package::find($id)->delete();
 
         return back()->with('message', 'Package has been deleted successfully.');
+    }
+
+    public function trashed()
+    {
+        $packages = Package::onlyTrashed()->get();
+        return view('admin.package.trashed', compact('packages'));
+    }
+
+    public function restore($id)
+    {
+        Package::whereId($id)->restore();
+
+        return back()->with('message', 'Package has been restored successfully.');
+    }
+
+    public function forceDelete($id){
+
+        Package::find($id)->forceDelete();
+
+        return back()->with('message', 'Package has been permanently deleted.');
     }
 }

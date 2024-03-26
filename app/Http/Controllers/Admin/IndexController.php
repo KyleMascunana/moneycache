@@ -13,14 +13,14 @@ class IndexController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        $activeCount = Customer::where('user_status', 'active')->count();
-        $inactiveCount = Customer::where('user_status', 'inactive')->count();
-        $suspendedCount = Customer::where('user_status', 'suspended')->count();
+        $activeCount = Customer::where('user_status', 'Active')->count();
+        $inactiveCount = Customer::where('user_status', 'Idle')->count();
+        $suspendedCount = Customer::where('user_status', 'Suspended')->count();
 
         $details = Detail::all();
-        $paidCount = Detail::where('payment_status', 'paid')->count();
-        $unpaidCount = Detail::where('payment_status', 'unpaid')->count();
-        $cancelledCount = Detail::where('payment_status', 'cancelled')->count();
+        $paidCount = Detail::where('payment_status', 'Paid')->count();
+        $unpaidCount = Detail::where('payment_status', 'Overdue')->count();
+        $cancelledCount = Detail::where('payment_status', 'Cancelled')->count();
 
         $package1Count = Detail::where('package_id', '1')->count();
         $package1ACount = Detail::where('package_id', '2')->count();

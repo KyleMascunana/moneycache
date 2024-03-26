@@ -29,15 +29,15 @@
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $customer->name }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $customer->contact }}</td>
                                     <td class="p-3 text-gray-800 text-sm text-center">
-                                        @if ($customer->user_status == 'active')
+                                        @if ($customer->user_status == 'Active')
                                         <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
                                             {{ $customer->user_status }}
                                         </span>
-                                    @elseif($customer->user_status == 'inactive')
+                                    @elseif($customer->user_status == 'Idle')
                                         <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
                                             {{ $customer->user_status }}
                                         </span>
-                                    @elseif($customer->user_status == 'suspended')
+                                    @elseif($customer->user_status == 'Suspended')
                                         <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
                                             {{ $customer->user_status }}
                                         </span>

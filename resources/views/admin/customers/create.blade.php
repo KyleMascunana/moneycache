@@ -51,9 +51,9 @@
                                                             <select name="user_status" required class="block mt-1 w-full border-gray-300 focus:border-indigo-300
                                                             focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                                                 <option disabled>-- Select Below --</option>
-                                                                <option class="text-sm text-gray-700" value="active">Active</option>
-                                                                <option class="text-sm text-gray-700" value="inactive">Inactive</option>
-                                                                <option class="text-sm text-gray-700" value="suspended">Suspended</option>
+                                                                <option class="text-sm text-gray-700" value="Active">Active</option>
+                                                                <option class="text-sm text-gray-700" value="Idle">Idle</option>
+                                                                <option class="text-sm text-gray-700" value="Suspended">Suspended</option>
                                                             </select>
                                                     </div>
                                                 </div>

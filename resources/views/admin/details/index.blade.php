@@ -20,7 +20,7 @@
                     <table id="" class="display">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer ID</th>
+                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer Name</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Package ID</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Package Name</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Month</th>
@@ -34,7 +34,7 @@
                         <tbody>
                                 @foreach ($details as $payment)
                                 <tr>
-                                    <td class="p-3 text-sm text-center">{{ $payment->customer_id }}</td>
+                                    <td class="p-3 text-sm text-center">{{ $payment->customer->name }}</td>
                                     <td class="p-3 text-sm text-center">{{ $payment->package_id }}</td>
                                     <td class="p-3 text-sm text-center">{{ $payment->package->package_name }}</td>
                                     <td class="p-3 text-sm text-center">{{ $payment->month }}</td>
@@ -42,15 +42,15 @@
                                     <td class="p-3 text-sm text-center">{{ $payment->start_date }}</td>
                                     <td class="p-3 text-sm text-center">{{ $payment->end_date }}</td>
                                     <td class="p-3 text-gray-800 text-sm text-center">
-                                        @if ($payment->payment_status == 'paid')
+                                        @if ($payment->payment_status == 'Paid')
                                         <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
                                             {{ $payment->payment_status }}
                                         </span>
-                                    @elseif($payment->payment_status == 'unpaid')
+                                    @elseif($payment->payment_status == 'Overdue')
                                         <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
                                             {{ $payment->payment_status }}
                                         </span>
-                                    @elseif($payment->payment_status == 'cancelled')
+                                    @elseif($payment->payment_status == 'Cancelled')
                                         <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
                                             {{ $payment->payment_status }}
                                         </span>

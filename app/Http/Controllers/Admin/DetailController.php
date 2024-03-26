@@ -16,7 +16,8 @@ class DetailController extends Controller
     public function index()
     {
         $details = Detail::all();
-        return view('admin.details.index', compact('details'));
+        $packages = Package::all();
+        return view('admin.details.index', compact('details', 'packages'));
     }
 
     /**

@@ -12,9 +12,9 @@
                     <table id="" class="display">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer ID</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Detail ID</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Package ID</th>
+                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer Name</th>
+                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Package Name</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Month</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Year</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Due Date</th>
@@ -24,22 +24,22 @@
                         <tbody>
                                 @foreach ($reports as $report)
                                 <tr>
-                                    <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->customer_id }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail_id }}</td>
-                                    <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->package_id }}</td>
+                                    <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->customer->name }}</td>
+                                    <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->package->package_name }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->month }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->year }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->end_date }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">
-                                        @if ($report->detail->payment_status == 'paid')
+                                        @if ($report->detail->payment_status == 'Paid')
                                         <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
                                             {{ $report->detail->payment_status }}
                                         </span>
-                                    @elseif($report->detail->payment_status == 'unpaid')
+                                    @elseif($report->detail->payment_status == 'Overdue')
                                         <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
                                             {{ $report->detail->payment_status }}
                                         </span>
-                                    @elseif($report->detail->payment_status == 'cancelled')
+                                    @elseif($report->detail->payment_status == 'Cancelled')
                                         <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
                                             {{ $report->detail->payment_status }}
                                         </span>
