@@ -225,9 +225,7 @@
             </div>
         </div>
     </div>
-
-
-    <script type="text/javascript">
+        <script type="text/javascript">
         $(function(){
                     new Chart(document.getElementById("horizontalBar"), {
             "type": "horizontalBar",

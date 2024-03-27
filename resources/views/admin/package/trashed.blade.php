@@ -7,6 +7,12 @@
                             <label class="uppercase text-2xl font-extrabold pl-5">Trashed Package List</label>
                             <p class="mt-1 text-sm leading-6 text-gray-600 pl-5">You can restore or force delete packages to the system here.</p>
                         </div>
+                        <div class="sm:col-span-3 mt-2 text-sm">
+                            <div class="flex justify-end p-3">
+                                <a href="{{ route('admin.package.index') }}" class="px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white
+                                    rounded-md">Go Back</a>
+                            </div>
+                        </div>
                     </div>
 
                     <table id="" class="display">

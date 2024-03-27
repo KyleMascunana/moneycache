@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Detail;
+use App\Models\Package;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,6 +23,7 @@ class IndexController extends Controller
         $unpaidCount = Detail::where('payment_status', 'Overdue')->count();
         $cancelledCount = Detail::where('payment_status', 'Cancelled')->count();
 
+        $packages = Package::all();
         $package1Count = Detail::where('package_id', '1')->count();
         $package1ACount = Detail::where('package_id', '2')->count();
         $package1BCount = Detail::where('package_id', '3')->count();
@@ -31,7 +33,7 @@ class IndexController extends Controller
 
         return view('admin.index', compact('activeCount', 'inactiveCount', 'suspendedCount','paidCount',
         'unpaidCount', 'cancelledCount', 'package1Count', 'package1ACount', 'package1BCount',
-         'package2Count', 'package2ACount', 'package2BCount'));
+         'package2Count', 'package2ACount', 'package2BCount', 'packages'));
     }
 
 }
