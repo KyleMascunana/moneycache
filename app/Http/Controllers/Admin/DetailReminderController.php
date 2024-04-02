@@ -74,6 +74,8 @@ class DetailReminderController extends Controller
      */
     public function destroy(DetailReminder $detailReminder)
     {
-        //
+        $detail->delete();
+
+        return back()->with('message', 'Customer has been deleted successfully.');
     }
 }
