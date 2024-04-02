@@ -6,6 +6,7 @@ use App\Models\Detail;
 use App\Models\Package;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use App\Models\DetailReminder;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -18,7 +19,9 @@ class IndexController extends Controller
         $inactiveCount = Customer::where('user_status', 'Idle')->count();
         $suspendedCount = Customer::where('user_status', 'Suspended')->count();
 
-        $details = Detail::all();
+        $detailreminders = DetailReminder::all();
+        $detailCount = DetailReminder::all()->count();
+
         $paidCount = Detail::where('payment_status', 'Paid')->count();
         $unpaidCount = Detail::where('payment_status', 'Overdue')->count();
         $cancelledCount = Detail::where('payment_status', 'Cancelled')->count();
@@ -33,7 +36,7 @@ class IndexController extends Controller
 
         return view('admin.index', compact('activeCount', 'inactiveCount', 'suspendedCount','paidCount',
         'unpaidCount', 'cancelledCount', 'package1Count', 'package1ACount', 'package1BCount',
-         'package2Count', 'package2ACount', 'package2BCount', 'packages'));
+         'package2Count', 'package2ACount', 'package2BCount', 'packages', 'detailCount', 'detailreminders'));
     }
 
 }
