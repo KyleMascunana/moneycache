@@ -13,7 +13,6 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\TemplateOneController;
-use App\Http\Controllers\Admin\DetailReminderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,8 +59,6 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::get('/softDelete/{id}', [PackageController::class, 'softDelete'])->name('package.softDelete');
     Route::get('/forceDelete/{id}', [PackageController::class, 'forceDelete'])->name('package.forceDelete');
     Route::get('/restore/{id}', [PackageController::class, 'restore'])->name('package.restore');
-
-    Route::resource('/detailreminder', DetailReminderController::class);
 
 });
 

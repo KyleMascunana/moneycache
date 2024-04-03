@@ -4,11 +4,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
               </svg>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {{ $detailCount }}
-                <span class="visually-hidden">unread messages</span>
-              </span>
+              @if ($reports->count() > 0)
+                    <!-- Display badge with the count -->
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">New alerts</span>
+                      </span>
+                @endif
           </button>
+
 
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,45 +29,21 @@
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Month</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Due Date</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Status</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                                @foreach ($detailreminders as $payment)
+                                @foreach ($reports as $report)
                                 <tr>
-                                    <td class="p-3 text-sm text-center">{{ $payment->detail->customer->name }}</td>
-                                    <td class="p-3 text-sm text-center">{{ $payment->detail->package->package_name }}</td>
-                                    <td class="p-3 text-sm text-center">{{ $payment->month }}</td>
-                                    <td class="p-3 text-sm text-center">{{ $payment->due_date }}</td>
+                                    <td class="p-3 text-sm text-center">{{ $report->detail->customer->name }}</td>
+                                    <td class="p-3 text-sm text-center">{{ $report->detail->package->package_name }}</td>
+                                    <td class="p-3 text-sm text-center">{{ $report->detail->month }}</td>
+                                    <td class="p-3 text-sm text-center">{{ $report->detail->end_date }}</td>
                                     <td class="p-3 text-gray-800 text-sm text-center">
-                                        @if ($payment->detail->payment_status == 'Paid')
-                                        <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
-                                            {{ $payment->detail->payment_status }}
-                                        </span>
-                                    @elseif($payment->detail->payment_status == 'Overdue')
+                                        @if ($report->detail->payment_status == 'Overdue')
                                         <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
-                                            {{ $payment->detail->payment_status }}
-                                        </span>
-                                    @elseif($payment->detail->payment_status == 'Cancelled')
-                                        <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
-                                            {{ $payment->detail->payment_status }}
+                                            {{ $report->detail->payment_status }}
                                         </span>
                                     @endif
-                                    </td>
-                                    <td>
-                                        <div class="items-center">
-                                            <div class="flex space-x-3">
-                                                <form action="{{ route('admin.details.destroy', $payment->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="text-red-500 hover:text-red-900 pl-[28px]">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                                          </svg>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

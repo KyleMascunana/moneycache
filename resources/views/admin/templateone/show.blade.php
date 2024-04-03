@@ -20,7 +20,7 @@
                             <p>{{ $templateone->customer_address }}</p>
                         </div>
                         <div class="text-justify">
-                            <p>Dear {{ $templateone->customer_abbreviation }}. {{ $templateone->customer_name }},</p>
+                            <p>Dear {{ $templateone->customer_abbreviation }} {{ $templateone->customer_name }},</p>
                             <p class="mt-2">{{ $templateone->email_description }}</p>
                             <p class="mt-4">Sincerely,</p>
                             <p>{{ $templateone->customer_name }}</p>

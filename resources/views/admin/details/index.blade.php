@@ -9,8 +9,6 @@
                         </div>
                         <div class="sm:col-span-3 mt-2">
                             <div class="flex justify-end p-3">
-                                <a href="{{ route('admin.detailreminder.create') }}" class="px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white
-                                    rounded-md"></i>Add Billing Overdue Reminder</a>
 
                                 <a href="{{ route('admin.details.create') }}" class="px-4 py-2 ml-4 bg-green-700 hover:bg-green-500 text-white
                                     rounded-md"></i>Add Billing</a>

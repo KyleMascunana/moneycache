@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Detail;
+use App\Models\Report;
 use App\Models\Package;
 use App\Models\Customer;
 use Illuminate\Http\Request;
@@ -19,8 +20,10 @@ class IndexController extends Controller
         $inactiveCount = Customer::where('user_status', 'Idle')->count();
         $suspendedCount = Customer::where('user_status', 'Suspended')->count();
 
-        $detailreminders = DetailReminder::all();
-        $detailCount = DetailReminder::all()->count();
+        $reports = Report::all();
+        $overduereports = $reports->filter(function($report){
+            return $report->detail->payment_status == 'Overdue';
+        });
 
         $paidCount = Detail::where('payment_status', 'Paid')->count();
         $unpaidCount = Detail::where('payment_status', 'Overdue')->count();
@@ -34,9 +37,9 @@ class IndexController extends Controller
         $package2ACount = Detail::where('package_id', '5')->count();
         $package2BCount = Detail::where('package_id', '6')->count();
 
-        return view('admin.index', compact('activeCount', 'inactiveCount', 'suspendedCount','paidCount',
+        return view('admin.index', ['reports' => $overduereports], compact('activeCount', 'inactiveCount', 'suspendedCount','paidCount',
         'unpaidCount', 'cancelledCount', 'package1Count', 'package1ACount', 'package1BCount',
-         'package2Count', 'package2ACount', 'package2BCount', 'packages', 'detailCount', 'detailreminders'));
+         'package2Count', 'package2ACount', 'package2BCount', 'packages', 'reports'));
     }
 
 }
