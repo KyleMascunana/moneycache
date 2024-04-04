@@ -62,9 +62,19 @@
                                                 </div>
 
                                                 <div class="sm:col-span-3">
-                                                    <label for="year" class="block text-sm font-medium leading-6 text-gray-900">Year</label>
+                                                    <label for="year" class="block text-sm font-medium leading-6 text-gray-900">Year<span class="text-red-600">*</span></label>
                                                     <div class="mt-2">
-                                                        <input type="number" name="year" required id="year" placeholder="ex: 2024, 2025, 2026..." autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <select name="year" required class="block mt-1 w-full border-gray-300 focus:border-indigo-300
+                                                            focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                                                                <option disabled>-- Select Below --</option>
+                                                                <option class="text-sm text-gray-700" value="2024">2024</option>
+                                                                <option class="text-sm text-gray-700" value="2025">2025</option>
+                                                                <option class="text-sm text-gray-700" value="2026">2026</option>
+                                                                <option class="text-sm text-gray-700" value="2027">2027</option>
+                                                                <option class="text-sm text-gray-700" value="2028">2028</option>
+                                                                <option class="text-sm text-gray-700" value="2029">2029</option>
+                                                                <option class="text-sm text-gray-700" value="2030">2030</option>
+                                                            </select>
                                                     </div>
                                                 </div>
 

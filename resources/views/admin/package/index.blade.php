@@ -23,7 +23,6 @@
                     <table id="" class="display">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">ID#</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">SL</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Icon</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Name</th>
@@ -37,7 +36,6 @@
                         <tbody>
                                 @foreach ($packages as $package)
                                 <tr>
-                                    <td class="p-3 text-sm text-center">{{ $package->id }}</td>
                                     <td class="p-3 text-sm text-left">{{ $package->package_number }}</td>
                                     <td class="p-3 text-sm text-center">
                                         <div class="flex items-center">
