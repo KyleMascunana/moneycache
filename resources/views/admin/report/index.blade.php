@@ -74,6 +74,7 @@
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Detail ID</th>
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer Name</th>
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Package Name</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-center">Email</th>
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Month</th>
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Year</th>
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Due Date</th>
@@ -88,6 +89,7 @@
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail_id }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->customer->name }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->package->package_name }}</td>
+                            <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->customer->email }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->month }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->year }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->end_date }}</td>

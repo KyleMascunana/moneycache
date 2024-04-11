@@ -26,7 +26,7 @@
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Month</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Year</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Start Date</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">End Date</th>
+                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Due Date</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Status</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Action</th>
                             </tr>
