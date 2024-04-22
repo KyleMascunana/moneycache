@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\User\UserPackageController;
 use App\Http\Controllers\Admin\TemplateOneController;
 
 Route::get('/', function () {
@@ -63,8 +64,18 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 });
 
 
-Route::middleware(['auth', 'role:user'])->name('user.')->prefix('user')->group(function(){
+Route::middleware(['auth', 'role:user', 'permission:View Package List'])->name('user.')->prefix('user')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+        Route::resource('/package', UserPackageController::class);
+        Route::get('/package/{package}', [UserPackageController::class, 'edit'])->name('package.edit');
+        Route::put('/package/{package}', [UserPackageController::class, 'update'])->name('package.update');
+        Route::get('/trashed', [UserPackageController::class, 'trashed'])->name('package.trashed');
+        Route::get('/restore/{id}', [UserPackageController::class, 'restore'])->name('package.restore');
+        Route::get('/softDelete/{id}', [UserPackageController::class, 'softDelete'])->name('package.softDelete');
+        Route::get('/forceDelete/{id}', [UserPackageController::class, 'forceDelete'])->name('package.forceDelete');
+        Route::get('/restore/{id}', [UserPackageController::class, 'restore'])->name('package.restore');
+
 });
 
 Route::middleware('auth')->group(function () {
