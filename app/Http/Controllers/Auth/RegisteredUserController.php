@@ -43,7 +43,9 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        if (Auth::login()) {
+        Auth::login($user);
+
+        if (Auth::check()) {
             $user = Auth::user();
 
             if ($user->hasRole('admin')) {

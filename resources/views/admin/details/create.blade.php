@@ -14,7 +14,6 @@
                         <div class="flex flex-col pt-5">
                                 <form method="POST" action="{{ route('admin.details.store') }}" enctype="multipart/form-data">
                                     @csrf
-
                                     <div class="border-b border-gray-900/10 pb-12">
                                         <h2 class="text-base font-semibold leading-7 text-gray-900">Customer Billing Form</h2>
                                             <p class="mt-1 text-sm leading-6 text-gray-600">Read what you input for less errors.</p>
@@ -44,6 +43,13 @@
                                                                 <option class="text-sm text-gray-700" value="{{ $package->id }}">{{ $package->id }} - {{ $package->package_number }} - {{ $package->package_name }}</option>
                                                            @endforeach
                                                             </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="sm:col-span-3">
+                                                    <label for="billing_payment" class="block text-sm font-medium leading-6 text-gray-900">Custom Price <span class="text-red-600">*</span></label>
+                                                    <div class="mt-2">
+                                                        <input type="number" name="billing_payment" id="billing_payment" autocomplete="given-name" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                     </div>
                                                 </div>
 
@@ -91,14 +97,12 @@
                                                     <div class="mt-2">
                                                         <select name="payment_status" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
                                                         focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                                            <option selected>-- Select Below --</option>
-                                                            <option class="text-sm text-gray-700" value="Paid">Paid</option>
                                                             <option class="text-sm text-gray-700" value="Overdue">Due/Unpaid</option>
+                                                            <option class="text-sm text-gray-700" value="Paid">Paid</option>
                                                             <option class="text-sm text-gray-700" value="Cancelled">Cancelled</option>
                                                         </select>
                                                     </div>
                                                 </div>
-
                                                 </div>
                                                 <div class="sm:col-span-6 pt-5 justify-end flex">
                                                     <button type="submit" class="px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white rounded-md p-5">Next</button>

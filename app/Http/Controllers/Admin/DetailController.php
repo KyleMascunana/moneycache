@@ -37,6 +37,7 @@ class DetailController extends Controller
     {
         $customer_id = $request->customer_id;
         $package_id = $request->package_id;
+        $billing_payment = $request->billing_payment;
         $month = $request->month;
         $year = $request->year;
         $start_date = $request->start_date;
@@ -47,6 +48,7 @@ class DetailController extends Controller
 
         $data->customer_id = $customer_id;
         $data->package_id = $package_id;
+        $data->billing_payment = $billing_payment;
         $data->month = $month;
         $data->year = $year;
         $data->start_date = $start_date;
@@ -54,7 +56,7 @@ class DetailController extends Controller
         $data->payment_status = $payment_status;
 
         $data->save();
-        return to_route('admin.details.index')->with('message', 'Customer Payment has been Created Successfully!');
+        return to_route('admin.customer.index')->with('message', 'Customer Payment has been Created Successfully!');
     }
 
     /**
@@ -86,7 +88,7 @@ class DetailController extends Controller
         ]);
 
         $detail->update($request->all());
-        return to_route('admin.details.index')->with('message', 'Customer has been Updated Successfully!');
+        return to_route('admin.customer.index')->with('message', 'Customer has been Updated Successfully!');
     }
 
     /**
