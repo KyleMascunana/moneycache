@@ -87,12 +87,13 @@
 
                                                 <div class="sm:col-span-3">
                                                     <label for="payment_status" class="block text-sm font-medium leading-6 text-gray-900">Payment Status</label>
+                                                    <p class="mt-1 text-sm leading-6 text-gray-600">If not paid yet, please select Due/Unpaid.</p>
                                                     <div class="mt-2">
                                                         <select name="payment_status" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
                                                         focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                                             <option selected>-- Select Below --</option>
                                                             <option class="text-sm text-gray-700" value="Paid">Paid</option>
-                                                            <option class="text-sm text-gray-700" value="Overdue">Overdue</option>
+                                                            <option class="text-sm text-gray-700" value="Overdue">Due/Unpaid</option>
                                                             <option class="text-sm text-gray-700" value="Cancelled">Cancelled</option>
                                                         </select>
                                                     </div>

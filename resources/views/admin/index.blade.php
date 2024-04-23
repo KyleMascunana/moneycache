@@ -57,145 +57,119 @@
             </div>
           </div>
     </div>
-    <div class="mt-[5px] grid sm:grid-cols-9">
-        <div class="sm:col-span-3">
-            <div class="py-5">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-6 text-gray-900">
-                            <div class="flex text-gray-100">
-                                <div>
-                                    <span class="flex items-center text-left pl-[50px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                                          </svg>
-                                    </span>
-                                    <span class="flex items-center ml-2 text-md">Active Customer</span>
-                                </div>
-                                <div class="border-l ml-4 border-gray-100">
-                                    <span class="flex items-center text-5xl mt-[10px] text-left pl-[50px]">
-                                        {{ $activeCount }}
-                                    </span>
+    <div class="py-12">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="grid sm:grid-cols-12">
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-red-500 overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $activeCount }}</span>
+                                            <span class="flex justify-center pt-2">Active Customer</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="sm:col-span-3">
-            <div class="py-5">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-orange-400 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-6 text-gray-900">
-                            <div class="flex text-gray-100">
-                                <div>
-                                    <span class="flex items-center text-left pl-[50px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                                          </svg>
-                                    </span>
-                                    <span class="flex items-center ml-2 text-md">Idle/Inactive Customer</span>
-                                </div>
-                                <div class="border-l ml-4 border-gray-100">
-                                    <span class="flex items-center text-5xl mt-[10px] text-left pl-[50px]">
-                                        {{ $inactiveCount }}
-                                    </span>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-orange-400 overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $inactiveCount }}</span>
+                                            <span class="flex justify-center pt-2">Idle Customer</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="sm:col-span-3">
-            <div class="py-5">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-[#1ABC9C] overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-6 text-gray-900">
-                            <div class="flex text-gray-100">
-                                <div>
-                                    <span class="flex items-center text-left pl-[50px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                                          </svg>
-                                    </span>
-                                    <span class="flex items-center ml-1 text-md">Suspended Customer</span>
-                                </div>
-                                <div class="border-l ml-4 border-gray-100">
-                                    <span class="flex items-center text-5xl mt-[10px] text-left pl-[50px]">
-                                        {{ $suspendedCount }}
-                                    </span>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-[#1ABC9C] overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $suspendedCount }}</span>
+                                            <span class="flex justify-center pt-2">Suspended Customer</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="sm:col-span-3">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-green-500 overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-                        <div class="flex text-gray-100">
-                            <div>
-                                <span class="flex items-center text-left pl-[50px]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                                      </svg>
-                                </span>
-                                <span class="flex justify-center ml-5 text-md">Paid Customer</span>
-                            </div>
-                            <div class="border-l ml-4 border-gray-100">
-                                <span class="flex items-center text-5xl mt-[10px] text-left pl-[50px]">
-                                    {{ $paidCount }}
-                                </span>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-green-500 overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $paidCount }}</span>
+                                            <span class="flex justify-center pt-2">Paid Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="sm:col-span-3">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-blue-500 overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-                        <div class="flex text-gray-100">
-                            <div>
-                                <span class="flex items-center text-left pl-[50px]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                                      </svg>
-                                </span>
-                                <span class="flex justify-center ml-5 text-md">Overdue Customer</span>
-                            </div>
-                            <div class="border-l ml-4 border-gray-100">
-                                <span class="flex items-center text-5xl mt-[10px] text-left pl-[50px]">
-                                    {{ $unpaidCount }}
-                                </span>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-blue-500 overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $unpaidCount }}</span>
+                                            <span class="flex justify-center pt-2">Overdue Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="sm:col-span-3">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-violet-500 overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-                        <div class="flex text-gray-100">
-                            <div>
-                                <span class="flex items-center text-left pl-[50px]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                                      </svg>
-                                </span>
-                                <span class="flex justify-center ml-5 text-md">Cancelled Customer</span>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-violet-500 overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $cancelledCount }}</span>
+                                            <span class="flex justify-center pt-2">Cancelled Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="border-l ml-4 border-gray-100">
-                                <span class="flex items-center text-5xl mt-[10px] text-left pl-[50px]">
-                                    {{ $cancelledCount }}
-                                </span>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-[#81DA00] overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $packagesCount }}</span>
+                                            <span class="flex justify-center pt-2">Available Package</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-[#6802DA] overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $templateCount }}</span>
+                                            <span class="flex justify-center pt-2">Available Templates</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,7 +177,7 @@
             </div>
         </div>
     </div>
-    <br><hr>
+    <hr>
 
     <div class="container flex flex-row mt-5">
         <div class="w-4/5">

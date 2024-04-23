@@ -6,6 +6,7 @@ use App\Models\Detail;
 use App\Models\Report;
 use App\Models\Package;
 use App\Models\Customer;
+use App\Models\TemplateOne;
 use Illuminate\Http\Request;
 use App\Models\DetailReminder;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +31,7 @@ class IndexController extends Controller
         $cancelledCount = Detail::where('payment_status', 'Cancelled')->count();
 
         $packages = Package::all();
+        $packagesCount = Package::count();
         $package1Count = Detail::where('package_id', '1')->count();
         $package1ACount = Detail::where('package_id', '2')->count();
         $package1BCount = Detail::where('package_id', '3')->count();
@@ -37,8 +39,11 @@ class IndexController extends Controller
         $package2ACount = Detail::where('package_id', '5')->count();
         $package2BCount = Detail::where('package_id', '6')->count();
 
+        $templates = TemplateOne::all();
+        $templateCount = TemplateOne::count();
+
         return view('admin.index', ['reports' => $overduereports], compact('activeCount', 'inactiveCount', 'suspendedCount','paidCount',
-        'unpaidCount', 'cancelledCount', 'package1Count', 'package1ACount', 'package1BCount',
+        'unpaidCount', 'cancelledCount','templates', 'templateCount', 'packagesCount', 'package1Count', 'package1ACount', 'package1BCount',
          'package2Count', 'package2ACount', 'package2BCount', 'packages', 'reports'));
     }
 
