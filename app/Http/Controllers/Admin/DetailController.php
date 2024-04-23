@@ -56,7 +56,7 @@ class DetailController extends Controller
         $data->payment_status = $payment_status;
 
         $data->save();
-        return to_route('admin.customer.index')->with('message', 'Customer Payment has been Created Successfully!');
+        return to_route('admin.customers.index')->with('message', 'Customer Payment has been Created Successfully!');
     }
 
     /**
@@ -88,7 +88,7 @@ class DetailController extends Controller
         ]);
 
         $detail->update($request->all());
-        return to_route('admin.customer.index')->with('message', 'Customer has been Updated Successfully!');
+        return to_route('admin.customers.index')->with('message', 'Customer has been Updated Successfully!');
     }
 
     /**

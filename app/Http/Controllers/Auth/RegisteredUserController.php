@@ -41,6 +41,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->assignRole($request->role_id);
+
         event(new Registered($user));
 
         Auth::login($user);
@@ -49,9 +51,9 @@ class RegisteredUserController extends Controller
             $user = Auth::user();
 
             if ($user->hasRole('admin')) {
-                return view('admin.index');
+                return redirect()->route('admin.index');
             } elseif ($user->hasRole('user')) {
-                return view('user.index');
+                return redirect()->route('user.index');
             }
         }
     }

@@ -11,7 +11,7 @@
                             <div class="flex justify-end p-3">
 
                                 <a href="{{ route('admin.details.create') }}" class="px-4 py-2 ml-4 bg-green-700 hover:bg-green-500 text-white
-                                    rounded-md"></i>Add Billing</a>
+                                    rounded-md"></i>Make Payment</a>
                             </div>
                         </div>
 

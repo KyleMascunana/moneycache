@@ -13,7 +13,6 @@
                     <table id="" class="display">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer No.</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Client ID</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Name</th>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Contact No.</th>
@@ -24,7 +23,6 @@
                         <tbody>
                                 @foreach ($customers as $customer)
                                 <tr>
-                                    <td class="p-3 text-sm text-center">{{ $customer->id }}</td>
                                     <td class="p-3 text-sm text-center">{{ $customer->client_id }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $customer->name }}</td>
                                     <td class="p-3 text-gray-700 text-sm text-center">{{ $customer->contact }}</td>
