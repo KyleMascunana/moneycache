@@ -13,7 +13,7 @@ class GenerateBilling extends Command
 
     public function handle()
     {
-        $details = Detail::whereMonth('end_date', now()->addDays(5))->wherePaymentStatus('unpaid')->get();
+        $details = Detail::whereDate('end_date', '<', now())->wherePaymentStatus('unpaid')->get();
 
         foreach ($details as $detail) {
             // Generate billing for the customer

@@ -26,9 +26,10 @@ class IndexController extends Controller
             return $report->detail->payment_status == 'Overdue';
         });
 
-        $paidCount = Detail::where('payment_status', 'Paid')->count();
-        $unpaidCount = Detail::where('payment_status', 'Overdue')->count();
-        $cancelledCount = Detail::where('payment_status', 'Cancelled')->count();
+        $paidCount = Detail::where('payment_status', 'paid')->count();
+        $unpaidCount = Detail::where('payment_status', 'unpaid')->count();
+        $overdueCount = Detail::where('payment_status', 'overdue')->count();
+        $cancelledCount = Detail::where('payment_status', 'cancelled')->count();
 
         $packages = Package::all();
         $packagesCount = Package::count();
@@ -43,7 +44,7 @@ class IndexController extends Controller
         $templateCount = TemplateOne::count();
 
         return view('admin.index', ['reports' => $overduereports], compact('activeCount', 'inactiveCount', 'suspendedCount','paidCount',
-        'unpaidCount', 'cancelledCount','templates', 'templateCount', 'packagesCount', 'package1Count', 'package1ACount', 'package1BCount',
+        'unpaidCount', 'cancelledCount','templates', 'templateCount', 'overdueCount',  'packagesCount', 'package1Count', 'package1ACount', 'package1BCount',
          'package2Count', 'package2ACount', 'package2BCount', 'packages', 'reports'));
     }
 

@@ -42,19 +42,15 @@
                                     <td class="p-3 text-sm text-center">{{ $payment->start_date }}</td>
                                     <td class="p-3 text-sm text-center">{{ $payment->end_date }}</td>
                                     <td class="p-3 text-gray-800 text-sm text-center">
-                                        @if ($payment->payment_status == 'Paid')
-                                        <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
-                                            {{ $payment->payment_status }}
-                                        </span>
-                                    @elseif($payment->payment_status == 'Overdue')
-                                        <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
-                                            {{ $payment->payment_status }}
-                                        </span>
-                                    @elseif($payment->payment_status == 'Cancelled')
-                                        <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
-                                            {{ $payment->payment_status }}
-                                        </span>
-                                    @endif
+                                        @if ($payment->payment_status == 'paid')
+                                                <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">{{ $payment->payment_status }}</span>
+                                            @elseif($payment->payment_status == 'unpaid')
+                                                <span class="px-2 font-bold bg-orange-400 border-2 border-orange-400 rounded-full">{{ $payment->payment_status }}</span>
+                                            @elseif($payment->payment_status == 'overdue')
+                                                <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">{{ $payment->payment_status }}</span>
+                                            @elseif($payment->payment_status == 'cancelled')
+                                                <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">{{ $payment->payment_status }}</span>
+                                            @endif
                                     </td>
                                     <td>
                                         <div class="items-center">

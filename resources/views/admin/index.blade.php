@@ -124,6 +124,20 @@
                                     <div class="p-6 text-gray-100 flex justify-center">
                                         <div>
                                             <span class="flex justify-center text-5xl font-semibold">{{ $unpaidCount }}</span>
+                                            <span class="flex justify-center pt-2">Unpaid Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <div class="py-2">
+                            <div class="mx-auto sm:px-4 lg:px-6">
+                                <div class="bg-blue-500 overflow-hidden sm:rounded-lg">
+                                    <div class="p-6 text-gray-100 flex justify-center">
+                                        <div>
+                                            <span class="flex justify-center text-5xl font-semibold">{{ $overdueCount }}</span>
                                             <span class="flex justify-center pt-2">Overdue Customer</span>
                                         </div>
                                     </div>
@@ -153,20 +167,6 @@
                                         <div>
                                             <span class="flex justify-center text-5xl font-semibold">{{ $packagesCount }}</span>
                                             <span class="flex justify-center pt-2">Available Package</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sm:col-span-3">
-                        <div class="py-2">
-                            <div class="mx-auto sm:px-4 lg:px-6">
-                                <div class="bg-[#6802DA] overflow-hidden sm:rounded-lg">
-                                    <div class="p-6 text-gray-100 flex justify-center">
-                                        <div>
-                                            <span class="flex justify-center text-5xl font-semibold">{{ $templateCount }}</span>
-                                            <span class="flex justify-center pt-2">Available Templates</span>
                                         </div>
                                     </div>
                                 </div>

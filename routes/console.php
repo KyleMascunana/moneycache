@@ -9,3 +9,4 @@ Artisan::command('inspire', function () {
 
 
 Schedule::call(GenerateBilling::class)->daily();
+Schedule::call(OverdueBilling::class)->daily();
