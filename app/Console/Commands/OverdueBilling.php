@@ -26,7 +26,7 @@ class OverdueBilling extends Command
      */
     public function handle()
     {
-        $details = Detail::where('payment_status', 'unpaid')->whereDate('end_date', '<', now()->subDay(1))->get();
+        $details = Detail::whereMonth('end_date', now()->subDay(1))->wherePaymentStatus('unpaid')->get();
 
         foreach ($details as $detail) {
         // Update payment status to "overdue"
