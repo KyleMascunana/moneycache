@@ -9,14 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            $user = Auth::user();
-
-            if ($user->hasRole('admin')) {
-                return view('admin.index');
-            } elseif ($user->hasRole('user')) {
-                return view('user.index');
-            }
-        }
+        $user = Auth::user();
+        return $user->hasRole('admin') ? view('admin.index') : view('user.index');
     }
 }

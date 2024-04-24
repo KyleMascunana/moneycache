@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('year')->nullable();
             $table->date('start_date')->format('d/m/Y')->nullable();
             $table->date('end_date')->format('d/m/Y')->nullable();
-            $table->string('payment_status')->nullable();
+            $table->string('payment_status')->default('unpaid');
             $table->unsignedBigInteger('package_id');
 
             $table->foreign('package_id')->references('id')->on('packages')->onUpdate('cascade')->onDelete('cascade');

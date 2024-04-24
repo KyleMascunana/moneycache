@@ -64,7 +64,7 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 });
 
 
-Route::middleware(['auth', 'role:user', 'permission:View Package List'])->name('user.')->prefix('user')->group(function(){
+Route::middleware(['auth', 'role:user'])->name('user.')->prefix('user')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
         Route::resource('/package', UserPackageController::class);
