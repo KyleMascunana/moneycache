@@ -56,19 +56,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                <button onclick="applyFilters()" type="button" class="w-1/2 h-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:text-sm">
-                                    Apply Filters
-                                </button>
-                                <button onclick="closeFilterModal()" type="button" class="w-1/2 h-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:text-sm">
+                                <button onclick="closeFilterModal()" type="button" class="w-1/2 mb-3 h-full inline-flex justify-center rounded-md border border-blue-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:text-sm">
                                     Cancel
                                 </button>
+                                <br>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <table id="billingTable" class="display">
+                <table id="billingTable" class="display text-sm text-gray-600">
                     <thead class="bg-gray-50 border-b-2 border-gray-200">
                         <tr>
                             <th class="p-3 text-sm font-semibold tracking-wide text-center">Detail ID</th>

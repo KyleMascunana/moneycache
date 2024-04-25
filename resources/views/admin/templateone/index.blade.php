@@ -11,7 +11,7 @@
 
                 </div>
                 <div class="p-6 text-gray-900">
-                    <table id="" class="display">
+                    <table id="" class="display text-sm text-gray-600">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">Template #</th>

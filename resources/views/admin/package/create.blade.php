@@ -87,8 +87,10 @@
                                                   </div>
 
                                                 </div>
-                                                <div class="sm:col-span-6 pt-5 justify-end flex">
-                                                    <button type="submit" class="px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white rounded-md p-5">Next</button>
+                                                <div class="sm:col-span-2 pt-5 justify-end flex">
+                                                    <a href="{{ route('admin.package.index') }}" class="px-4 py-2 bg-purple-700 hover:bg-purple-500 text-white rounded-md p-5">Cancel</a>
+
+                                                    <button type="submit" class="ml-5 px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white rounded-md p-5">Save</button>
                                                 </div>
                                             </div>
 

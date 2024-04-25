@@ -33,7 +33,9 @@
                                 <x-input-label for="role_id" value="{{ __('Register as:') }}"/>
                                 <select name="role_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
                                 focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                    <option value="user">User</option>
+                                    @foreach ($roles as $role)
+                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             @error('name') <span class="text--500 text-sm">{{ $message }}</span>@enderror

@@ -20,7 +20,7 @@
 
 
                     </div>
-                    <table id="" class="display">
+                    <table id="" class="display text-sm text-gray-600">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-center">SL</th>
@@ -45,7 +45,7 @@
                                     </td>
                                     <td class="p-3 text-sm text-center">{{ $package->package_name }}</td>
                                     <td class="p-3 text-sm text-center">{{ $package->package_detail }}</td>
-                                    <td class="p-3 text-sm text-center"><span class="font-semibold text-lg pr-1">P</span>{{ $package->package_price }}</td>
+                                    <td class="p-3 text-sm text-center"><span class="font-semibold text-lg pr-1">₱</span>{{ $package->package_price }}</td>
                                     <td class="p-3 text-sm text-center">
                                         @if ($package->package_status == 'Active')
                                         <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">

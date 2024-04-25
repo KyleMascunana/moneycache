@@ -39,7 +39,7 @@
                                                 <div class="sm:col-span-3">
                                                     <label for="customer_id" class="block text-sm font-medium leading-6 text-gray-900">Customer ID</label>
                                                     <div class="mt-2">
-                                                            <select name="customer_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300
+                                                            <select name="customer_id" required class="block mt-1 w-full border-gray-300 focus:border-indigo-300
                                                             focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                                                 <option selected>-- Select Below --</option>
                                                                @foreach ($customers as $customer)

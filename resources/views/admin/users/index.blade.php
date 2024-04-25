@@ -14,7 +14,7 @@
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow-sm overflow-hidden border-b border-gray-200 sm:rounded-lg">
                             <div class="min-w-full divide-y divide-gray-200">
-                                <table class="min-w-full divide-y devide-gray-200">
+                                <table class="display">
                                     <thead class="bg-gray-50">
                                         <tr>
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
@@ -36,15 +36,15 @@
                                                     {{ $user->email }}
                                                 </div>
                                             </td>
-                                            @if ($user->roles)
-                                            @foreach ($user->roles as $user_role)
                                             <td class="px-6 py-4">
                                                 <div class="flex items-center">
+                                                    @foreach ($user->roles as $user_role)
+                                                    @if ($user->roles)
                                                     {{ $user_role->name }}
+                                                    @endif
+                                                    @endforeach
                                                 </div>
                                             </td>
-                                            @endforeach
-                                            @endif
                                             <td>
                                                 <div class="items-center pl-5">
                                                     <div class="flex justify-end space-x-6 pr-6">
