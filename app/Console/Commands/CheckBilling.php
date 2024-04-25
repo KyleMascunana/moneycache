@@ -38,7 +38,7 @@ class CheckBilling extends Command
         $start_date = $detail->start_date;
         $end_date = $detail->end_date;
         $payment_status = $detail->payment_status;
-        $user_id = $request->user_id;
+        $user_id = $detail->user_id;
 
         $check = new Detail();
 
@@ -50,7 +50,7 @@ class CheckBilling extends Command
         $check->start_date = $start_date;
         $check->end_date = $end_date;
         $check->payment_status = $payment_status;
-        $data->user_id = $user_id;
+        $check->user_id = $user_id;
 
         $check->save();
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('user_id')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->date('start_date')->format('d/m/Y')->nullable();
