@@ -94,15 +94,19 @@
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->year }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">{{ $report->detail->end_date }}</td>
                             <td class="p-3 text-gray-700 text-sm text-center">
-                                @if ($report->detail->payment_status == 'Paid')
+                                @if ($report->detail->payment_status == 'paid')
                                 <span class="px-2 font-bold bg-green-400 border-2 border-green-400 rounded-full">
                                     {{ $report->detail->payment_status }}
                                 </span>
-                                @elseif($report->detail->payment_status == 'Overdue')
+                                @elseif($report->detail->payment_status == 'unpaid')
+                                <span class="px-2 font-bold bg-orange-400 border-2 border-orange-400 rounded-full">
+                                    {{ $report->detail->payment_status }}
+                                </span>
+                                @elseif($report->detail->payment_status == 'overdue')
                                 <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
                                     {{ $report->detail->payment_status }}
                                 </span>
-                                @elseif($report->detail->payment_status == 'Cancelled')
+                                @elseif($report->detail->payment_status == 'cancelled')
                                 <span class="px-2 font-bold bg-red-400 border-2 border-red-400 rounded-full">
                                     {{ $report->detail->payment_status }}
                                 </span>

@@ -13,6 +13,7 @@ class Detail extends Model
 
     protected $fillable = [
         'customer_id',
+        'user_id',
         'package_id',
         'billing_payment',
         'month',

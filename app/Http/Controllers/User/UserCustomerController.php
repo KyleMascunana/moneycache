@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Models\User;
 use App\Models\Detail;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class CustomerController extends Controller
+class UserCustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class CustomerController extends Controller
     {
         $customers = Customer::all();
         $details = Detail::all();
-        return view('admin.customers.index', compact('customers', 'details'));
+        return view('user.customers.index', compact('customers', 'details'));
     }
 
     /**
@@ -29,7 +29,7 @@ class CustomerController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('admin.customers.create', compact('users'));
+        return view('user.customers.create', compact('users'));
     }
 
     /**
@@ -44,7 +44,6 @@ class CustomerController extends Controller
         $business_name = $request->business_name;
         $business_location = $request->business_location;
         $user_status = $request->user_status;
-        $user_id = $request->user_id;
 
         $data = new Customer;
 
@@ -55,10 +54,10 @@ class CustomerController extends Controller
         $data->business_name = $business_name;
         $data->business_location = $business_location;
         $data->user_status = $user_status;
-        $data->user_id = $user_id;
+        $data->user_id = auth()->user()->id;
 
         $data->save();
-        return to_route('admin.customers.index')->with('message', 'Customer has been Created Successfully!');
+        return to_route('user.customers.index')->with('message', 'Customer has been Created Successfully!');
     }
 
     /**
@@ -67,7 +66,7 @@ class CustomerController extends Controller
     public function show(Customer $customer)
     {
         $details = Detail::where('customer_id', $customer->id)->get();
-        return view('admin.customers.show', compact('customer', 'details'));
+        return view('user.customers.show', compact('customer', 'details'));
 
     }
 
@@ -76,7 +75,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        return view('admin.customers.edit', compact('customer'));
+        return view('user.customers.edit', compact('customer'));
     }
 
     /**
@@ -89,7 +88,7 @@ class CustomerController extends Controller
         ]);
 
         $customer->update($request->all());
-        return to_route('admin.customers.index')->with('message', 'Customer has been Updated Successfully!');
+        return to_route('user.customers.index')->with('message', 'Customer has been Updated Successfully!');
     }
 
     /**

@@ -2,11 +2,12 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
 
-Schedule::call(GenerateBilling::class)->daily();
-Schedule::call(OverdueBilling::class)->daily();
+Schedule::call(CheckBilling::class)->daily();
+Schedule::call(CheckOverdue::class)->daily();

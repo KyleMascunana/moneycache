@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class DetailController extends Controller
+class UserDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,7 +46,6 @@ class DetailController extends Controller
         $start_date = $request->start_date;
         $end_date = $request->end_date;
         $payment_status = $request->payment_status;
-        $user_id = $request->user_id;
 
         $data = new Detail;
 
@@ -58,7 +57,7 @@ class DetailController extends Controller
         $data->start_date = $start_date;
         $data->end_date = $end_date;
         $data->payment_status = $payment_status;
-        $data->user_id = $user_id;
+        $data->user_id = auth()->user()->id;
 
         $data->save();
         return to_route('admin.customers.index')->with('message', 'Customer Payment has been Created Successfully!');

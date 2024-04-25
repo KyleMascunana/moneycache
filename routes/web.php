@@ -12,8 +12,10 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\UserDetailController;
 use App\Http\Controllers\User\UserPackageController;
 use App\Http\Controllers\Admin\TemplateOneController;
+use App\Http\Controllers\User\UserCustomerController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -64,7 +66,7 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 });
 
 
-Route::middleware(['auth', 'role:user'])->name('user.')->prefix('user')->group(function(){
+Route::middleware(['auth', 'role:user', 'permission:View Package List','permission:View Customer List'])->name('user.')->prefix('user')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
         Route::resource('/package', UserPackageController::class);
@@ -75,6 +77,12 @@ Route::middleware(['auth', 'role:user'])->name('user.')->prefix('user')->group(f
         Route::get('/softDelete/{id}', [UserPackageController::class, 'softDelete'])->name('package.softDelete');
         Route::get('/forceDelete/{id}', [UserPackageController::class, 'forceDelete'])->name('package.forceDelete');
         Route::get('/restore/{id}', [UserPackageController::class, 'restore'])->name('package.restore');
+
+        Route::resource('/customers', UserCustomerController::class);
+
+        Route::resource('/details', UserDetailController::class);
+    Route::get('/details/{detail}', [UserDetailController::class, 'edit'])->name('details.edit');
+    Route::put('/details/{detail}', [UserDetailController::class, 'update'])->name('details.update');
 
 });
 

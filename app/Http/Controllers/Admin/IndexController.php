@@ -23,7 +23,7 @@ class IndexController extends Controller
 
         $reports = Report::all();
         $overduereports = $reports->filter(function($report){
-            return $report->detail->payment_status == 'Overdue';
+            return $report->detail->payment_status == 'overdue';
         });
 
         $paidCount = Detail::where('payment_status', 'paid')->count();

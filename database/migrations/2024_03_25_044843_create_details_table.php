@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('user_id')->unique();
             $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->date('start_date')->format('d/m/Y')->nullable();
@@ -23,6 +24,8 @@ return new class extends Migration
 
             $table->foreign('package_id')->references('id')->on('packages')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

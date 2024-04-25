@@ -39,7 +39,7 @@
                                     <td class="p-3 text-sm text-center">{{ $report->detail->month }}</td>
                                     <td class="p-3 text-sm text-center">{{ $report->detail->end_date }}</td>
                                     <td class="p-3 text-gray-800 text-sm text-center">
-                                        @if ($report->detail->payment_status == 'Overdue')
+                                        @if ($report->detail->payment_status == 'overdue')
                                         <span class="px-2 font-bold bg-yellow-400 border-2 border-yellow-400 rounded-full">
                                             {{ $report->detail->payment_status }}
                                         </span>

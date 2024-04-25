@@ -1,10 +1,10 @@
-<x-admin-layout>
+<x-user-layout>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex justify-end p-3">
-                        <a href="{{ route('admin.details.index') }}" class="text-blue-500 hover:text-blue-900"><i class="fa-solid fa-door-closed"></i></a>
+                        <a href="{{ route('user.details.index') }}" class="text-blue-500 hover:text-blue-900"><i class="fa-solid fa-door-closed"></i></a>
                     </div>
                     <div class="sm:col-span-3 mt-2 p-3">
                         <label class="uppercase text-2xl font-extrabold pl-5">New Customer Billing </label>
@@ -12,29 +12,13 @@
 
                     <hr>
                         <div class="flex flex-col pt-5">
-                                <form method="POST" action="{{ route('admin.details.store') }}" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('user.details.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="border-b border-gray-900/10 pb-12">
                                         <h2 class="text-base font-semibold leading-7 text-gray-900">Customer Billing Form</h2>
                                             <p class="mt-1 text-sm leading-6 text-gray-600">Read what you input for less errors.</p>
 
                                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-
-                                                <div class="sm:col-span-3">
-                                                    <label for="user_id" class="block text-sm font-medium leading-6 text-gray-900">User as Customer <span class="text-red-600">*</span></label>
-                                                    <div class="mt-2">
-                                                            <select name="user_id" required class="block mt-1 w-full border-gray-300 focus:border-indigo-300
-                                                            focus:ring focus:ring-indogo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                                                <option disabled>-- Select Below --</option>
-                                                                @foreach ($users as $user)
-                                                                    @if ($user->hasRole('user'))
-                                                                        <option class="text-sm text-gray-700" value="{{ $user->id }}">{{ $user->name }}</option>
-                                                                    @endif
-
-                                                                @endforeach
-                                                            </select>
-                                                    </div>
-                                                </div>
 
                                                 <div class="sm:col-span-3">
                                                     <label for="customer_id" class="block text-sm font-medium leading-6 text-gray-900">Customer ID</label>
@@ -140,4 +124,4 @@
         </div>
     </div>
 
-    </x-admin-layout>
+    </x-user-layout>
