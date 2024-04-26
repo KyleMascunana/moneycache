@@ -56,8 +56,8 @@
                                     </div>
                                 </div>
                             </div>
-                                <button onclick="closeFilterModal()" type="button" class="w-1/2 mb-3 h-full inline-flex justify-center rounded-md border border-blue-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:text-sm">
-                                    Cancel
+                                <button onclick="closeFilterModal()" type="button" class="w-1/2 mb-3 h-full inline-flex justify-center rounded-md border border-blue-300 shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-gray-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:text-sm">
+                                    Done
                                 </button>
                                 <br>
                             </div>

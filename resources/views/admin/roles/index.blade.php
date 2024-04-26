@@ -6,9 +6,9 @@
                 <label class="uppercase text-2xl font-extrabold pl-5">Roles List</label>
                 <p class="mt-1 text-sm leading-6 text-gray-600 pl-5">You can view or add new role to the system here.</p>
                 <hr>
-                <div class="flex justify-end p-3">
+                <!--<div class="flex justify-end p-3">
                     <a href="{{ route('admin.roles.create') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 text-white rounded-md">Add Role</a>
-                </div>
+                </div>-->
                 <div class="flex flex-col">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow-lg overflow-hidden border-b border-gray-200 sm:rounded-lg">
