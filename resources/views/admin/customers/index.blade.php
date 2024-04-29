@@ -12,12 +12,12 @@
                     </div>
                     <table id="" class="display text-sm text-gray-600">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
-                            <tr>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Client ID</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Name</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Contact No.</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">User Status</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-left">Action</th>
+                            <tr class="bg-blue-500 text-white">
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Client ID</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Name</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Contact No.</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">User Status</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-left">Action</th>
                             </tr>
                         </thead>
                         <tbody>

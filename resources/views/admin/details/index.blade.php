@@ -17,18 +17,18 @@
 
 
                     </div>
-                    <table id="" class="display text-sm uppercase text-gray-600">
+                    <table id="" class="display text-sm text-gray-600">
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
-                            <tr>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Customer Name</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Package ID</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Package Name</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Month</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Year</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Start Date</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Due Date</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Status</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-center">Action</th>
+                            <tr class="bg-blue-500 text-white">
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Customer Name</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Package ID</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Package Name</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Month</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Year</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Start Date</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Due Date</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Status</th>
+                                <th class="p-3 text-sm hover:bg-blue-600 font-semibold tracking-wide text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
